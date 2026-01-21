@@ -1,4 +1,4 @@
-package com.delivery.deliveryapi.user.entity;
+package com.delivery.deliveryapi.entity;
 
 public enum Role {
     CLIENTE,

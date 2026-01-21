@@ -1,13 +1,18 @@
-package com.delivery.deliveryapi.auth.security;
+package com.delivery.deliveryapi.security;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import java.io.IOException;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.GenericFilter;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Component
 public class JwtAuthFilter extends GenericFilter {

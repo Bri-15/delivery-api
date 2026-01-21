@@ -1,10 +1,11 @@
-package com.delivery.deliveryapi.auth.dto;
+package com.delivery.deliveryapi.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 public class LoginRequest {
 
     @NotBlank

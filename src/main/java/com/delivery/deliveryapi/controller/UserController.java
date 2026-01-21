@@ -1,11 +1,11 @@
-package com.delivery.deliveryapi.user.controller;
+package com.delivery.deliveryapi.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.delivery.deliveryapi.user.repository.UserRepository;
+import com.delivery.deliveryapi.repository.UserRepository;
 
 @RestController
 @RequestMapping("/users")

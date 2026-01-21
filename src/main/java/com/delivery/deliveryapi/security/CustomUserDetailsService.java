@@ -1,12 +1,13 @@
-package com.delivery.deliveryapi.auth.security;
+package com.delivery.deliveryapi.security;
 
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.delivery.deliveryapi.user.repository.UserRepository;
+import com.delivery.deliveryapi.entity.User;
+import com.delivery.deliveryapi.repository.UserRepository;
+
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -18,14 +19,16 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) {
-        var user = repo.findByUsername(username)
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+        User user = repo.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
 
-        return User.builder()
-                .username(user.getUsername())
+        // ✅ Usamos el User de Spring Security (no tu entity)
+        return org.springframework.security.core.userdetails.User
+                .withUsername(user.getUsername())
                 .password(user.getPasswordHash())
-                .roles(user.getRole().name())
+                .roles(user.getRole().toString())
                 .build();
     }
 }

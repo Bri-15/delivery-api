@@ -1,10 +1,10 @@
-package com.delivery.deliveryapi.user.repository;
+package com.delivery.deliveryapi.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.delivery.deliveryapi.user.entity.User;
+import com.delivery.deliveryapi.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username);

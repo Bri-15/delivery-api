@@ -1,14 +1,14 @@
-package com.delivery.deliveryapi.auth.controller;
+package com.delivery.deliveryapi.controller;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.delivery.deliveryapi.auth.dto.AuthResponse;
-import com.delivery.deliveryapi.auth.dto.LoginRequest;
-import com.delivery.deliveryapi.auth.dto.RegisterRequest;
-import com.delivery.deliveryapi.auth.service.AuthService;
+import com.delivery.deliveryapi.dto.AuthResponse;
+import com.delivery.deliveryapi.dto.LoginRequest;
+import com.delivery.deliveryapi.dto.RegisterRequest;
+import com.delivery.deliveryapi.service.AuthService;
 
 import jakarta.validation.Valid;
 
